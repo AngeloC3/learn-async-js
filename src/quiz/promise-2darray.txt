@@ -1,1 +1,8 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+You call the promise1 then method which triggers "sum called". It got passed in an array object, so it starts the 
+array method, and leaves the function and triggers "returning from sum". Then, the promise2 then method is called which
+triggers "sum called" again. It is not an array, so the input is instantly rejected which prints "rejecting", 
+and the function ends, printing "returning from sum." Now that that function is done, the error is printed which shows
+"BAD INPUT: ~~~~". Then, the promise1 inner algorithm continues and finishes succesfully which prints "resolving".
+Finallt, the result of promise1 is printed which is "45".
